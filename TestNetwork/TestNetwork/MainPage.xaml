@@ -1,0 +1,30 @@
+<Page x:Class="TestNetwork.MainPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="using:TestNetwork"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	Background="{ThemeResource BackgroundBrush}">
+
+	<Grid ColumnSpacing="10"
+          RowSpacing="20"
+          Padding="20"
+          HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBox PlaceholderText="Get Url" Text="{x:Bind GetUrl, Mode=TwoWay}"/>
+        <Button Grid.Column="1" Click="GetButton_Click">Test Get</Button>
+        
+        <TextBox Grid.Row="1" PlaceholderText="Post Url" Text="{x:Bind PostUrl, Mode=TwoWay}"/>
+        <TextBox Grid.Row="2" PlaceholderText="Post Url Body" AcceptsReturn="True" TextWrapping="Wrap" Text="{x:Bind PostBody, Mode=TwoWay}"/>
+        <Button Grid.Row="2" Grid.Column="1" Click="PostButton_Click">Test Post</Button>
+	</Grid>
+</Page>
