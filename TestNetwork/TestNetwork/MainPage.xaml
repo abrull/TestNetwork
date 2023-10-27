@@ -7,24 +7,20 @@
 	mc:Ignorable="d"
 	Background="{ThemeResource BackgroundBrush}">
 
-	<Grid ColumnSpacing="10"
-          RowSpacing="20"
+    <StackPanel
           Padding="20"
-          HorizontalAlignment="Stretch">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="1*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <TextBox PlaceholderText="Get Url" Text="{x:Bind GetUrl, Mode=TwoWay}"/>
-        <Button Grid.Column="1" Click="GetButton_Click">Test Get</Button>
+          HorizontalAlignment="Stretch"
+          Spacing="15">
+
+        <TextBlock Text="GET" Foreground="{StaticResource PrimaryColor}"/>
         
-        <TextBox Grid.Row="1" PlaceholderText="Post Url" Text="{x:Bind PostUrl, Mode=TwoWay}"/>
-        <TextBox Grid.Row="2" PlaceholderText="Post Url Body" AcceptsReturn="True" TextWrapping="Wrap" Text="{x:Bind PostBody, Mode=TwoWay}"/>
-        <Button Grid.Row="2" Grid.Column="1" Click="PostButton_Click">Test Post</Button>
-	</Grid>
+        <TextBox PlaceholderText="Url" Text="{x:Bind GetUrl, Mode=TwoWay}"/>
+        <Button Click="GetButton_Click" HorizontalAlignment="Center" Width="200">Go</Button>
+
+        <TextBlock Text="POST" Foreground="{StaticResource PrimaryColor}"/>
+        
+        <TextBox PlaceholderText="Url" Text="{x:Bind PostUrl, Mode=TwoWay}"/>
+        <TextBox PlaceholderText="Body" AcceptsReturn="True" TextWrapping="Wrap" Text="{x:Bind PostBody, Mode=TwoWay}"/>
+        <Button Grid.Column="1" Click="PostButton_Click" HorizontalAlignment="Center" Width="200">Go</Button>
+	</StackPanel>
 </Page>

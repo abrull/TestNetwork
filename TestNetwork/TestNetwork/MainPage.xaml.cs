@@ -21,7 +21,7 @@ namespace TestNetwork
         {
             if (GetUrl is null)
             {
-                ShowAlert("Error", "Please enter a URL and BODY for a a POST request");
+                ShowAlert("Error", "Please enter a URL for a GET request");
                 return;
             }
             using var client = new HttpClient();
